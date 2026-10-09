@@ -34,6 +34,9 @@ public class HelloController {
     public String goodbye(){
         return "Good bye from Spring Boot";
     }
-
+    @GetMapping("/status/info")
+    public String  InfoController(){
+        return "this application shows swagger ui and it has 3 mappings called hello ,statusand goodbye.when tomcat server loads hello browser gives Hello from Spring Boots! ,and and status loads it gives..api running and system dat and time and goodbye loads give gooodbye fropm spring boot.and also person.java class has new varibvale called email.and it setters and getters ";
+    }
 
 }
