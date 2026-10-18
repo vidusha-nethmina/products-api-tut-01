@@ -40,5 +40,11 @@ public class ProductService {
   return products.removeIf(p -> p.getId().equals(id));
  }
 
+ public List<Product> findByName(String name) {
+  return products.stream()
+          .filter(p -> p.getName().contains(name))
+          .toList();
+ }
+
 
 }

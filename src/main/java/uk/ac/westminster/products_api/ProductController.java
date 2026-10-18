@@ -2,6 +2,7 @@ package uk.ac.westminster.products_api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
@@ -31,6 +32,12 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public boolean deleteProduct(@PathVariable Long id) {
         return productService.deleteProduct(id);
+    }
+
+
+    @GetMapping("/search")
+    public List<Product> searchProducts(@RequestParam String name) {
+        return productService.findByName(name);
     }
 
 
