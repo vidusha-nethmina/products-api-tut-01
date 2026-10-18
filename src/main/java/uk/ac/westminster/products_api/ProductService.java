@@ -36,4 +36,9 @@ public class ProductService {
           .findFirst();
  }
 
+ public boolean deleteProduct(Long id) {
+  return products.removeIf(p -> p.getId().equals(id));
+ }
+
+
 }

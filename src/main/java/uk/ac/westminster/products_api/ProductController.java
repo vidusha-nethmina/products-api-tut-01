@@ -2,6 +2,7 @@ package uk.ac.westminster.products_api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 
@@ -24,6 +25,12 @@ public class ProductController {
     @PostMapping
     public Product addProduct(@RequestBody Product product) {
         return productService.addProduct(product);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public boolean deleteProduct(@PathVariable Long id) {
+        return productService.deleteProduct(id);
     }
 
 
