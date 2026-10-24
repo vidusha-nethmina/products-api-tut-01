@@ -1,5 +1,14 @@
 package uk.ac.westminster.products_api;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+// Infer the subtype from its unique JSON fields; ordinary Product requests still work.
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION, defaultImpl = Product.class)
+@JsonSubTypes({
+    @JsonSubTypes.Type(DigitalProduct.class),
+    @JsonSubTypes.Type(PhysicalProduct.class)
+})
 public class Product {
     private Long id;
     private String name;

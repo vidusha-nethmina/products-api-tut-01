@@ -8,3 +8,6 @@ Observed:
 - name was missing
 
 Restored getName() and confirmed full JSON.
+## Tutorial 4 - Inheritance
+
+See [activities, explanation and verification steps](docs/tutorial4.md) and the [product hierarchy UML](docs/uml/product-hierarchy.svg).
